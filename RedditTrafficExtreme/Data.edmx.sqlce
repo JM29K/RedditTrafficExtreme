@@ -1,0 +1,91 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server Compact Edition
+-- --------------------------------------------------
+-- Date Created: 03/26/2013 01:50:32
+-- Generated from EDMX file: C:\Users\JustinG\Documents\visual studio 2012\Projects\RedditTrafficExtremeLite\RedditTrafficExtreme\Data.edmx
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- NOTE: if the constraint does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- NOTE: if the table does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    DROP TABLE [ProxiesLoadeds];
+GO
+    DROP TABLE [RedditAccounts];
+GO
+    DROP TABLE [Settings];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'ProxiesLoadeds'
+CREATE TABLE [ProxiesLoadeds] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [URL] nvarchar(100)  NOT NULL,
+    [Port] nvarchar(100)  NOT NULL,
+    [UserName] nvarchar(100)  NULL,
+    [Password] nvarchar(100)  NULL,
+    [InUse] bit  NOT NULL,
+    [NextUse] datetime  NULL
+);
+GO
+
+-- Creating table 'RedditAccounts'
+CREATE TABLE [RedditAccounts] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [UserName] nvarchar(100)  NOT NULL,
+    [Password] nvarchar(100)  NOT NULL,
+    [Active] bit  NOT NULL,
+    [InUse] bit  NOT NULL,
+    [ProxyID] int  NULL
+);
+GO
+
+-- Creating table 'Settings'
+CREATE TABLE [Settings] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(500)  NOT NULL,
+    [Value] nvarchar(500)  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [ID] in table 'ProxiesLoadeds'
+ALTER TABLE [ProxiesLoadeds]
+ADD CONSTRAINT [PK_ProxiesLoadeds]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'RedditAccounts'
+ALTER TABLE [RedditAccounts]
+ADD CONSTRAINT [PK_RedditAccounts]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Settings'
+ALTER TABLE [Settings]
+ADD CONSTRAINT [PK_Settings]
+    PRIMARY KEY ([ID] );
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------

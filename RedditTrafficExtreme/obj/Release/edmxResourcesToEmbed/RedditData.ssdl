@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RedditData.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RedditDataStoreContainer">
+    <EntitySet Name="ProxiesLoaded" EntityType="RedditData.Store.ProxiesLoaded" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="RedditAccounts" EntityType="RedditData.Store.RedditAccounts" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Settings" EntityType="RedditData.Store.Settings" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="ProxiesLoaded">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Port" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="InUse" Type="bit" Nullable="false" />
+    <Property Name="NextUse" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RedditAccounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="InUse" Type="bit" Nullable="false" />
+    <Property Name="ProxyID" Type="int" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Value" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RedditDataStoreContainer" CdmEntityContainer="RedditDataContainer">
+    <EntitySetMapping Name="ProxiesLoaded">
+      <EntityTypeMapping TypeName="IsTypeOf(RedditData.ProxiesLoaded)">
+        <MappingFragment StoreEntitySet="ProxiesLoaded">
+          <ScalarProperty Name="NextUse" ColumnName="NextUse" />
+          <ScalarProperty Name="InUse" ColumnName="InUse" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RedditAccounts">
+      <EntityTypeMapping TypeName="IsTypeOf(RedditData.RedditAccount)">
+        <MappingFragment StoreEntitySet="RedditAccounts">
+          <ScalarProperty Name="ProxyID" ColumnName="ProxyID" />
+          <ScalarProperty Name="InUse" ColumnName="InUse" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="RedditData.Setting">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

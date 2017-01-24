@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RedditData" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="RedditDataContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ProxiesLoaded" EntityType="RedditData.ProxiesLoaded" />
+    <EntitySet Name="RedditAccounts" EntityType="RedditData.RedditAccount" />
+    <EntitySet Name="Settings" EntityType="RedditData.Setting" />
+  </EntityContainer>
+  <EntityType Name="ProxiesLoaded">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="URL" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Port" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="InUse" Nullable="false" DefaultValue="False" />
+    <Property Type="DateTime" Name="NextUse" Nullable="true" Precision="3" />
+  </EntityType>
+  <EntityType Name="RedditAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" DefaultValue="True" />
+    <Property Type="Boolean" Name="InUse" Nullable="false" DefaultValue="False" />
+    <Property Type="Int32" Name="ProxyID" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Value" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

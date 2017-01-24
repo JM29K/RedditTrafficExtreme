@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataEntities">
+    <EntitySetMapping Name="ProxiesLoadeds">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.ProxiesLoaded)">
+        <MappingFragment StoreEntitySet="ProxiesLoadeds">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="InUse" ColumnName="InUse" />
+          <ScalarProperty Name="NextUse" ColumnName="NextUse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RedditAccounts">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.RedditAccount)">
+        <MappingFragment StoreEntitySet="RedditAccounts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="InUse" ColumnName="InUse" />
+          <ScalarProperty Name="ProxyID" ColumnName="ProxyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Setting)">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

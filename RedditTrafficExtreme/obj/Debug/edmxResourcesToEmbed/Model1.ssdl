@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="ProxiesLoaded" EntityType="Model1.Store.ProxiesLoaded" store:Type="Tables" />
+    <EntitySet Name="RedditAccounts" EntityType="Model1.Store.RedditAccounts" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="ProxiesLoaded">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Port" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="InUse" Type="bit" Nullable="false" />
+    <Property Name="NextUse" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RedditAccounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="InUse" Type="bit" Nullable="false" />
+    <Property Name="ProxyID" Type="int" />
+  </EntityType>
+</Schema>
